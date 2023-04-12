@@ -1,6 +1,6 @@
 import { Checkbox, Text, CloseButton, HStack } from '@chakra-ui/react';
 
-const TodoItem = ({ id, title, completed, onToggleTodo }) => {
+const TodoItem = ({ id, title, completed, onToggleTodo, onDeleteTodo }) => {
 
   return (
     <HStack spacing={3}>
@@ -14,7 +14,14 @@ const TodoItem = ({ id, title, completed, onToggleTodo }) => {
         })}
       />
       <Text>{title}</Text>
-      <CloseButton />
+      <CloseButton
+        onClick={() => onDeleteTodo({
+          variables: {
+            id
+          }
+        })
+        }
+      />
     </HStack>
   );
 };

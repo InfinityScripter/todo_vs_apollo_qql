@@ -33,3 +33,11 @@ mutation UpdateTodo($id: ID! $completed: Boolean!){
   }
 }
 `;
+
+export const DELETE_TODO = gql`
+    mutation DeleteTodo ($id: ID!){
+        deleteTodo:removeTodo (id:$id){
+            id
+        }
+    }
+`;

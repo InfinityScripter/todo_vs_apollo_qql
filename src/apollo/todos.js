@@ -22,3 +22,14 @@ $completed: Boolean!) {
   }
 }
 `;
+
+export const UPDATE_TODO = gql`
+mutation UpdateTodo($id: ID! $completed: Boolean!){
+  updateTodo(id:$id,completed:$completed){
+    id
+    title
+    user_id
+    completed
+  }
+}
+`;
